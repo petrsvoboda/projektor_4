@@ -1,0 +1,18 @@
+{% extends 'layout.twig' %}
+
+{% block page_title %}
+    Review
+{% endblock %}
+
+{% block content %}
+    <p><a href="{{ urlList }}">Back to list of reviews</a></p>    
+    {% if urlEdit %}
+        <p><a href="{{ urlEdit }}">Review edit</a></p>
+    {% endif %}
+    {% if creatorName %}
+        <p>Review created by {{ creatorName }}</p>
+    {% endif %}     
+    {% include 'form.twig' %}
+{% endblock %}
+      
+     

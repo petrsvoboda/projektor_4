@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Projektor | Grafia.cz |</title>
+        <link rel="icon" type="image/gif" href="favicon.gif"></link>
+        <link rel="stylesheet" type="text/css" href="css/default.css" />
+        <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    </head>
+
+    <body>    
+        <div id="logout-ie"> 
+            <div id="logout">
+            <form name="Logout" id="Logout" action="./logout.php" method="get">
+                <input type="Submit" value="Odhlásit"></input>
+            </form>
+            </div>
+        </div>
+    
+        <div tal:attributes="id %STRANKA%/id" class="index">
+            <p tal:content="%STRANKA%/con | nothing" id="index_con"></p>
+            <h1 tal:content="%STRANKA%/nadpis | nothing" id="nadpis">Projektor test</h1>
+            <div  tal:condition="%STRANKA%/debuguj | nothing" id="debuguj">
+                <a href="" tal:attributes="href %STRANKA%/debuguj"  tal:content="%STRANKA%/debugujtext | nothing">DEBUGUJ!</a>
+            </div> 
+            
+            <div  id="selecty">
+                <!-- %FORM% -->
+                <span tal:content="structure %STRANKA%/formular | nothing"></span>
+            </div>
+            <div  tal:condition="%STRANKA%/selecty | nothing">
+                <span tal:repeat="select %STRANKA%/selecty">
+                    <span tal:content="select"></span>>
+                </span>
+            </div>            
+
+            <div  tal:condition="%STRANKA%/tlacitka | nothing">
+                <h2 id="menu">Menu</h2>
+                <ul>
+                    <li tal:repeat="tlacitko %STRANKA%/tlacitka">
+                        <a href="" tal:content="tlacitko/popisek" tal:attributes="href tlacitko/odkaz" class="tlacitko"/>
+                    </li>
+                </ul>
+            </div>            
+            <!-- %NEXT% -->
+            <span tal:condition="%STRANKA%/potomek | nothing"></span>
+        </div>
+    </body>
+</html>

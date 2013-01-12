@@ -1,0 +1,19 @@
+<form action="{{ action_url }}" method="post">
+   <h1>{{ action_name }} login</h1>
+   <input type="hidden" name="backUrl" value={{backUrl}} />
+   <input type="hidden" name="login_form" value="login_form" />
+   
+   <p>
+      <label for="name">Name: </label><br />
+      <input type="text" name="name" id="name" />
+   </p>
+ 
+   <p>
+      <label for="password">Password: </label><br />
+      <input type="password" name="password" id="password" />
+   </p>
+ 
+   <p>
+      <input type="submit" value="{{ action_name }} Login" />
+   </p>
+</form>

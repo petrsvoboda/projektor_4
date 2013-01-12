@@ -1,0 +1,28 @@
+<table>
+    <tr>
+        {% for index, value in table[0] %}
+                    <th>{{ index }}</th>
+        {% endfor %}
+    </tr>
+    {% for row in table %}
+        <tr>
+            {% for index, value in row %}
+                    {% if index == 'buttons'%}
+                        <td>
+                            <ul>
+                            {% for button in value %}
+                                    <li>
+                                        <a class="button" href="{{ button.url }}">{{ button.caption }}</a>
+                                    </li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    {% else %}
+                        <td>
+                            {{ value }}
+                        </td>                        
+                    {% endif %}
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>

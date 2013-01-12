@@ -1,0 +1,12 @@
+{% extends 'layout.twig' %}
+
+{% block page_title %}
+    Profiles
+{% endblock %}
+
+{% block content %}
+    {% if urlAdd %}
+        <p><a href="{{ urlAdd }}">New profile</a></p>    
+    {% endif %}
+   {% include 'table.twig' %}
+{% endblock %}

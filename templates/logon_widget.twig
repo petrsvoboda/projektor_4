@@ -1,0 +1,9 @@
+<div id='logon_widget'>
+    {% if logonUser %}    
+        <p>User {{ logonUser.name }} is logged as {{ logonUser.role }} (<a href="{{ urlFor('user_edit') }}">edit user</a>)</p>
+        {% include 'logon_widget_logout_form.twig' %}                
+    {% else %}
+        {% include 'logon_widget_login_form.twig' %}  
+        <p><a href="{{ urlFor('user_add') }}">Register as new user</a></p>    
+    {% endif %}
+</div>

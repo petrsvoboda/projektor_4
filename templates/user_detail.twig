@@ -1,0 +1,12 @@
+{% extends 'layout.twig' %}
+
+{% block page_title %}
+    Detail of User
+{% endblock %}
+
+{% block content %}
+    {% if urlEdit %}
+        <p><a href="{{ urlEdit }}">User edit</a></p>
+    {% endif %}
+    {% include 'form.twig' %}
+{% endblock %}

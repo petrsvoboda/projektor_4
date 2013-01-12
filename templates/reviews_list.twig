@@ -1,0 +1,13 @@
+{% extends 'layout.twig' %}
+
+{% block page_title %}
+    Reviews
+{% endblock %}
+
+{% block content %}
+    <p><a href="{{ urlList }}">Back to list of places</a></p>
+    {% if urlAdd %}
+        <p><a href="{{ urlAdd }}">New review</a></p>
+    {% endif %}     
+    {% include 'table.twig' %}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% block form %}
+    <form name="{{name}}" action="{{action}}" method="post">
+        <table>
+            {% for param in inputParams %}           
+                <tr>
+                    {% if param.type!= "hidden" %}
+                        <td>
+                            <label for="{{param.id}}">{{param.title}}</label>                
+                        </td>
+                    {% endif %}
+                    <td class="{{param.type}}">    
+                        {% if param.tag == "input" %}    
+                            <input class="text" type="{{param.type}}" name="{{param.name}}" id="{{param.id}}" value="{{param.value}}" {{param.readonly}}/> 
+                        {% endif %}
+                        {% if param.tag == "textarea" %}
+                            <textarea  id="{{param.id}}" {{param.readonly}}>{{ param.value }}</textarea>
+                        {% endif %}
+                        {% if param.tag == "select" %}    
+                            <select name="{{param.name}}" id="{{param.id}}" >
+                                {% for option in param.options %}
+                                    <option value="{{ option.value }}">{{ option.text }}</option>
+                                {% endfor %}
+                            </select>
+                        {% endif %}
+                        
+                    </td>
+                </tr>           
+            {% endfor %}
+        </table>
+        {% if isFormReadonly %}
+        {% else %}
+            <input class="submit" type="submit" value="{{submitTitle}}" />
+        {% endif %}
+    </form>
+{% endblock %}

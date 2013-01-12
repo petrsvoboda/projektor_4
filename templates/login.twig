@@ -1,0 +1,8 @@
+{% extends 'layout.twig' %}
+ 
+{% block page_title %}{{ action_name }} Login{% endblock %}
+ 
+{% block content %}
+    <h2>{{ message|default('') }}</h2>
+   {% include 'login_form.twig' %}
+{% endblock %}

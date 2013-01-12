@@ -1,0 +1,12 @@
+{% extends 'layout.twig' %}
+
+{% block page_title %}
+    Places
+{% endblock %}
+
+{% block content %}
+    {% if urlAdd %}
+        <p><a href="{{ urlAdd }}">New place</a></p>    
+    {% endif %}    
+    {% include 'table.twig' %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'layout.twig' %}
+{% block page_title %}Home{% endblock %}
+
+
+{% block content %}
+    {% if urlAdmin %}
+        <p>
+            <a href="{{ urlFor('news_admin_home') }}">news administration</a>
+        </p>
+    {% endif %}
+    
+{% for article in articles %}
+    <h1>
+        <a href="{{ urlFor('news_detail', {'id': article.id}) }}">
+            {{ article.title }}
+        </a>
+        <span class="nameOfAutor">
+            by {{ article.author }}
+        </span>
+    </h1>
+    <p>{{ article.summary }}</p>
+   {% else %}
+      <p>There are currently no articles.</p>
+   {% endfor %}
+{% endblock %}

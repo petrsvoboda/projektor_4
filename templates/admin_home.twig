@@ -1,0 +1,34 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+    <h1>My news Administration</h1>
+    <p><a href="{{ urlFor('logout') }}">Logout</a></p> 
+    <p><a href="{{ urlFor('news_admin_add') }}">Add Article</a></p>
+ 
+    {% if articles %}
+        <table>
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Date</th>
+                <th colspan="2">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for article in articles %}
+                <tr>
+                    <td>{{ article.title }}</td>
+                    <td>{{ article.author }}</td>
+                    <td>{{ article.timestamp|date('jS F Y') }}</td>
+                    <td><a href="{{ urlFor('news_admin_edit', {'id': article.id}) }}">Edit</a></td>
+                    <td><a href="{{ urlFor('news_admin_delete', {'id': article.id}) }}">Delete</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>There are currently no articles.</p>
+    {% endif %}
+{% endblock %}

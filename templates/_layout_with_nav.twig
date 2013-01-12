@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <body>
+    <div id="page">
+      <div id="header">
+      {% include 'primary.tmpl' %}
+      </div>
+
+      <div id="left">
+        {% include 'secondary.tmpl' %}
+      </div>
+
+      <div id="right">
+      This is the main page content. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+
+      <div id="footer">
+        {% include 'footer.tmpl' %}
+      </div>
+    </div>
+  </body>
+</html>
+
+separate templates:
+
+    <!-- begin: primary.tmpl -->
+    <table>
+      <tr>
+        {% for item in nav.primary %}
+        <td><a href="{{ item.url }}">{{ item.name|upper }}</a></td>
+        {% endfor %}
+      </tr>
+    </table>
+    <!-- end: primary.tmpl -->
+    <!-- begin: secondary.tmpl -->
+    <ul>
+      {% for item in nav.secondary %}
+      <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+      {% endfor %}
+    </ul>
+    <!-- end: secondary.tmpl -->
+    <!-- begin: footer.tmpl -->
+    <div style="align:center">
+    This page licensed under a Creative Commons License. Last updated on: {{ updated }}.
+    </div>
+    <!-- end: secondary.tmpl -->

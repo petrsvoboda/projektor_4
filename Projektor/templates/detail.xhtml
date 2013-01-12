@@ -1,0 +1,22 @@
+<div tal:attributes="id %STRANKA%/id" class="detail">
+    <span tal:condition="%STRANKA%/tlacitkozpet | nothing"  class="tlacitkozpet">
+        <a href="" tal:content="%STRANKA%/tlacitkozpet/popisek" tal:attributes="href %STRANKA%/tlacitkozpet/odkaz" class="tlacitko"/>
+    </span>
+
+    <p tal:content="%STRANKA%/navigace | nothing" class="navigace"/>
+    <h3 tal:content="%STRANKA%/nadpis | nothing" />
+    <p tal:condition="%STRANKA%/ulozeno | nothing">Úspěšně uloženo!</p>
+    <p tal:condition="%STRANKA%/ulozeno_chyba | nothing">Při ukládání došlo k chybě!</p>
+    <p tal:content="%STRANKA%/hlaseni | nothing" />
+    <p tal:content="%STRANKA%/prihlaseni_na_akci | nothing" />
+
+    <span tal:condition="%STRANKA%/tlacitka | nothing">
+        <span tal:repeat="tlacitko %STRANKA%/tlacitka">
+            <a href="" tal:content="tlacitko/popisek" tal:attributes="href tlacitko/odkaz" class="tlacitko"/>
+        </span>
+    </span>
+    <!-- %FORM% -->
+    <span tal:content="structure %STRANKA%/formular | nothing"></span>
+    <!-- %NEXT% -->
+    <span tal:content="structure %STRANKA%/potomek | nothing"></span>
+</div>

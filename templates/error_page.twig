@@ -1,0 +1,12 @@
+{% extends 'layout.twig' %}
+
+{% block page_title %}
+    An error occured, sorry.
+{% endblock %}
+
+{% block content %}
+<h3>An error occured, sorry.</h3>
+    <p>{{ message }}</p>
+    <pre>{{ print }}</pre>
+    <p><a href="{{ urlFor('home') }}">You may turn to home page</a></p>    
+{% endblock %}

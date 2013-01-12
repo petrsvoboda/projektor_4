@@ -1,0 +1,17 @@
+{% extends 'layout.twig' %}
+
+{% block page_title %}
+    Detail of Place
+{% endblock %}
+
+{% block content %}
+        {% if urlReviewsList %}
+        <p><a href="{{ urlReviewsList }}">List of reviews</a></p>
+    {% endif %}  
+    {% if urlEdit %}
+        <p><a href="{{ urlEdit }}">Place edit</a></p>
+    {% endif %}    
+    {% include 'form.twig' %}
+{% endblock %}
+      
+     

@@ -1,0 +1,23 @@
+Použity informace z těchto stránek:
+http://net.tutsplus.com/tutorials/php/rapid-application-prototyping-in-php-using-a-micro-framework/
+
+příklad užití urlFor v kombinaci s Twig:
+http://silentworks.co.uk/news/development/using-twig-with-slim-framework.html
+(navazuje na http://silentworks.co.uk/news/development/using-phpactiverecord-with-slim-framework.html - tady je druhá možnost ORM - php activerecord)
+
+login:
+http://help.slimframework.com/discussions/problems/6-simple-user-login
+
+https://github.com/j4mie/paris
+https://github.com/j4mie/idiorm
+- vytvořit složku Paris a do ní nakopírovat paris.php a idiorm.php
+
+http://www.slimframework.com
+- nakopírovat Slim - do rootu kopíruj složku Slim a soubor .htaccess (složky docs a tests a ostatní soubory nejsou potřeba) - v rootu vznikne složka Slim
+
+http://twig.sensiolabs.org
+https://github.com/fabpot/Twig/tags
+- nakopírovat Twig - do rootu složku \lib\Twig (v ní jsou php skripty, zbytek není potřeba) - v rootu vznikne složka Twig
+
+https://github.com/codeguy/Slim-Extras
+- zkopírovat soubor codeguy-Slim-Extras-cf20851\Views\Extension\Twig\Extensions\Slim.php do Twig\Extension\Slim.php pro správné fungování urlFor s Twig-em
